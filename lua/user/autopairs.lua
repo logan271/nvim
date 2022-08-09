@@ -6,6 +6,7 @@ end
 
 npairs.setup {
   check_ts = true, -- treesitter integration
+  -- <cmd>echo &ft<CR> to find out the file type
   disable_filetype = { "TelescopePrompt" },
 }
 
