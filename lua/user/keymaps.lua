@@ -14,7 +14,6 @@ vim.g.mapleader = ";"
 -- Insert --
 -- Press jk to escape from insert mode to normal_mode
 keymap("i", "jk", "<ESC>", opts)
-keymap("c", "<C-c>", "<ESC>", opts)
 
 -- Modes
 --   normal_mode = "n",
@@ -43,10 +42,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
--- keymap("n", "<S-l>", ":bnext<CR>", opts) -- shirt + l
--- keymap("n", "<S-h>", ":bprevious<CR>", opts) -- shirt + h
-keymap("n", "<leader>bl", ":bnext<CR>", opts) -- shirt + l
-keymap("n", "<leader>bh", ":bprevious<CR>", opts) -- shirt + l
+keymap("n", "<S-l>", ":bnext<CR>", opts) -- shirt + l
+keymap("n", "<S-h>", ":bprevious<CR>", opts) -- shirt + h
 
 -- Close buffers
 keymap("n", "<leader>bd", "<cmd>Bdelete!<CR>", opts)

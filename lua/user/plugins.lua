@@ -77,6 +77,8 @@ return packer.startup(function(use)
   use { "folke/tokyonight.nvim" }
   -- https://github.com/LunarVim/darkplus.nvim
   use { "lunarvim/darkplus.nvim" }
+  -- https://github.com/sainnhe/sonokai
+  use { "sainnhe/sonokai" }
 
   -- completion plugins
   -- https://github.com/hrsh7th/nvim-cmp
