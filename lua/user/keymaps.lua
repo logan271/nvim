@@ -31,8 +31,8 @@ keymap("i", "jk", "<ESC>", opts)
 -- keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- split window
-keymap("n", "<C-w>_", "<C-w>s", opts) -- split horizontally
-keymap("n", "<C-w>|", "<C-w>v", opts) -- split vertically
+-- keymap("n", "<C-w>_", "<C-w>s", opts) -- split horizontally
+-- keymap("n", "<C-w>|", "<C-w>v", opts) -- split vertically
 
 -- `control + arrow` keys to resiz window
 -- Need to disable the MacOS native shortcuts 
@@ -64,21 +64,34 @@ keymap("v", "p", '"_dP', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Visual Block --
+-- Move text up and down
+keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
+
 -- Plugins --
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
+
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fF", ":Telescope oldfiles<CR>", opts)
+keymap("n", "<leader>f/", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fl", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fr", ":Telescope current_buffer_fuzzy_find<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fs", ":Telescope current_buffer_fuzzy_find<CR>", opts)
+keymap("n", "<leader>fS", ":Telescope grep_string<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope registers<CR>", opts)
 keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 keymap("n", "<leader>fm", ":Telescope marks<CR>", opts)
 keymap("n", "<leader>fc", ":Telescope command_history<CR>", opts)
+keymap("n", "<leader>gc", ":Telescope git_commits<CR>", opts)
+keymap("n", "<leader>gd", ":Telescope git_bcommits<CR>", opts)
+keymap("n", "<leader>gb", ":Telescope git_branches<CR>", opts)
+keymap("n", "<leader>gs", ":Telescope git_status<CR>", opts)
+keymap("n", "<leader>ft", ":Telescope treesitter<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
