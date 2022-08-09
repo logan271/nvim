@@ -39,11 +39,23 @@ telescope.setup {
     },
   },
   pickers = {
-    find_files = {
+    buffers = {
       -- dropdown, cursor, ivy
-      -- theme = "dropdown",
-    }
+      theme = "cursor",
+      previewer = false,
+    },
+    registers = {
+      theme = "cursor",
+      previewer = false,
+    },
+    marks = {
+      theme = "cursor",
+      previewer = false,
+    },
+    command_history = {
+      theme = "cursor",
+      previewer = false,
+    },
   },
-  extensions = {
-  },
+  extensions = {},
 }

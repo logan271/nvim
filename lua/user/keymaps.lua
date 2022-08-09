@@ -14,6 +14,7 @@ vim.g.mapleader = ";"
 -- Insert --
 -- Press jk to escape from insert mode to normal_mode
 keymap("i", "jk", "<ESC>", opts)
+keymap("c", "<C-c>", "<ESC>", opts)
 
 -- Modes
 --   normal_mode = "n",
@@ -75,23 +76,29 @@ keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fF", ":Telescope oldfiles<CR>", opts)
-keymap("n", "<leader>f/", ":Telescope live_grep<CR>", opts)
+-- search
+-- Searches for the string under your cursor in your current working directory
+keymap("n", "<leader>sS", ":Telescope grep_string<CR>", opts)
+-- Search for a string in your current working directory and get results live as you type (respecting .gitignore)
+keymap("n", "<leader>ss", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fs", ":Telescope current_buffer_fuzzy_find<CR>", opts)
-keymap("n", "<leader>fS", ":Telescope grep_string<CR>", opts)
+keymap("n", "<leader>fc", ":Telescope command_history<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope registers<CR>", opts)
 keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 keymap("n", "<leader>fm", ":Telescope marks<CR>", opts)
-keymap("n", "<leader>fc", ":Telescope command_history<CR>", opts)
+-- buffers
+keymap("n", "<leader>bb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>bs", ":Telescope current_buffer_fuzzy_find<CR>", opts)
+keymap("n", "<leader>bt", ":Telescope current_buffer_tags<CR>", opts)
+-- git
 keymap("n", "<leader>gc", ":Telescope git_commits<CR>", opts)
 keymap("n", "<leader>gd", ":Telescope git_bcommits<CR>", opts)
 keymap("n", "<leader>gb", ":Telescope git_branches<CR>", opts)
 keymap("n", "<leader>gs", ":Telescope git_status<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope treesitter<CR>", opts)
+-- Lists Function names, variables, from Treesitter!
+-- keymap("n", "<leader>ft", ":Telescope treesitter<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
