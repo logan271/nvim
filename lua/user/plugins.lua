@@ -93,7 +93,8 @@ return packer.startup(function(use)
   use { "hrsh7th/cmp-nvim-lsp" }
   -- https://github.com/hrsh7th/cmp-nvim-lua
   use { "hrsh7th/cmp-nvim-lua" }
-
+  -- https://github.com/kylechui/nvim-surround
+  use { "kylechui/nvim-surround" }
   -- snippets
   -- https://github.com/L3MON4D3/LuaSnip
   use { "L3MON4D3/LuaSnip" } --snippet engine
