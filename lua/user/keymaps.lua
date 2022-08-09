@@ -48,7 +48,7 @@ keymap("n", "<leader>bl", ":bnext<CR>", opts) -- shirt + l
 keymap("n", "<leader>bh", ":bprevious<CR>", opts) -- shirt + l
 
 -- Close buffers
-keymap("n", "<leader>d", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<leader>bd", "<cmd>Bdelete!<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
