@@ -59,3 +59,4 @@ telescope.setup {
   },
   extensions = {},
 }
+

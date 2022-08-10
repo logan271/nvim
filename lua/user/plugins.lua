@@ -110,6 +110,8 @@ return packer.startup(function(use)
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
   -- https://github.com/RRethy/vim-illuminate
   use { "RRethy/vim-illuminate" }
+  -- https://github.com/glepnir/lspsaga.nvim
+  use { 'glepnir/lspsaga.nvim' } -- LSP UIs
 
   -- Telescope
   -- https://github.com/nvim-telescope/telescope.nvim
@@ -129,6 +131,10 @@ return packer.startup(function(use)
   use { "mfussenegger/nvim-dap" }
   use { "rcarriga/nvim-dap-ui" }
   use { "ravenxrz/DAPInstall.nvim" }
+
+  -- Web development
+  -- https://github.com/windwp/nvim-ts-autotag
+  use { 'windwp/nvim-ts-autotag' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
