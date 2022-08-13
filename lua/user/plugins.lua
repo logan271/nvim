@@ -146,8 +146,6 @@ return packer.startup(function(use)
 		"nvim-telescope/telescope-fzf-native.nvim",
 		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 	})
-	-- https://github.com/p00f/nvim-ts-rainbow
-	-- use { "p00f/nvim-ts-rainbow" }
 
 	-- Git
 	-- https://github.com/lewis6991/gitsigns.nvim
