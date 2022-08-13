@@ -113,7 +113,13 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-
+  -- https://github.com/j-hui/fidget.nvim
+	use({
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup({})
+		end,
+	})
 	-- Colorschemes
 	-- https://github.com/folke/tokyonight.nvim
 	use({ "folke/tokyonight.nvim" })
