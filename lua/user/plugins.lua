@@ -113,7 +113,7 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-  -- https://github.com/j-hui/fidget.nvim
+	-- https://github.com/j-hui/fidget.nvim
 	use({
 		"j-hui/fidget.nvim",
 		config = function()
@@ -145,6 +145,16 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lua" })
 	-- https://github.com/kylechui/nvim-surround
 	use({ "kylechui/nvim-surround" })
+  -- https://github.com/danymat/neogen
+	use({
+		"danymat/neogen",
+		config = function()
+			require("neogen").setup({})
+		end,
+		requires = "nvim-treesitter/nvim-treesitter",
+		-- Uncomment next line if you want to follow only stable versions
+		-- tag = "*"
+	})
 	-- snippets
 	-- https://github.com/L3MON4D3/LuaSnip
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine

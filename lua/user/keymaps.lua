@@ -127,3 +127,6 @@ keymap("n", "gR", ":TroubleToggle lsp_references<cr>", opts)
 
 -- Symboloutline
 keymap("n", "gs", ":SymbolsOutline<cr>", opts)
+
+-- neogen
+keymap("n", "g/", ":Neogen<CR>", opts)
