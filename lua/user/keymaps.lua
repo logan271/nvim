@@ -49,7 +49,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts) -- shirt + h
 keymap("n", "<leader>bd", "<cmd>Bdelete!<CR>", opts)
 
 -- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+-- keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- quit vim
 keymap("n", "<S-q>", "<cmd>quit!<CR>", opts)
@@ -125,3 +125,5 @@ keymap("n", "<leader>xq", ":TroubleToggle quickfix<cr>", opts)
 keymap("n", "<leader>xl", ":TroubleToggle loclist<cr>", opts)
 keymap("n", "gR", ":TroubleToggle lsp_references<cr>", opts)
 
+-- Symboloutline
+keymap("n", "gs", ":SymbolsOutline<cr>", opts)

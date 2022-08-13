@@ -83,11 +83,13 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-  -- https://github.com/simrat39/symbols-outline.nvim
+	-- https://github.com/simrat39/symbols-outline.nvim
 	use({
 		"simrat39/symbols-outline.nvim",
 		config = function()
-			require("symbols-outline").setup({})
+			require("symbols-outline").setup({
+				auto_preview = false,
+			})
 		end,
 	})
 	-- https://github.com/phaazon/hop.nvim
