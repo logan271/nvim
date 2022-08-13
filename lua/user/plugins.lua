@@ -123,6 +123,8 @@ return packer.startup(function(use)
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
 	-- https://github.com/rafamadriz/friendly-snippets
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
+	-- https://github.com/folke/trouble.nvim
+	use({ "folke/trouble.nvim" })
 
 	-- LSP
 	-- https://github.com/neovim/nvim-lspconfig

@@ -97,9 +97,6 @@ keymap("n", "<leader>gs", ":Telescope git_status<CR>", opts)
 -- Lists Function names, variables, from Treesitter!
 -- keymap("n", "<leader>ft", ":Telescope treesitter<CR>", opts)
 
--- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
@@ -119,3 +116,12 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 keymap("n", "<leader>jw", ":HopWord<cr>", opts)
 keymap("n", "<leader>jc", ":HopChar1<cr>", opts)
 keymap("n", "<leader>jl", ":HopLine<cr>", opts)
+
+-- trouble
+keymap("n", "<leader>xx", ":TroubleToggle<cr>", opts)
+keymap("n", "<leader>xw", ":TroubleToggle workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>xd", ":TroubleToggle document_diagnostics<cr>", opts)
+keymap("n", "<leader>xq", ":TroubleToggle quickfix<cr>", opts)
+keymap("n", "<leader>xl", ":TroubleToggle loclist<cr>", opts)
+keymap("n", "gR", ":TroubleToggle lsp_references<cr>", opts)
+
