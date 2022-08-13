@@ -13,7 +13,7 @@ vim.g.mapleader = ";"
 
 -- Insert --
 -- Press jk to escape from insert mode to normal_mode
-keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jk", "<ESC>l", opts)
 
 -- Modes
 --   normal_mode = "n",
