@@ -35,7 +35,7 @@ keymap("i", "jk", "<ESC>", opts)
 -- keymap("n", "<C-w>|", "<C-w>v", opts) -- split vertically
 
 -- `control + arrow` keys to resiz window
--- Need to disable the MacOS native shortcuts 
+-- Need to disable the MacOS native shortcuts
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
