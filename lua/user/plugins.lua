@@ -93,6 +93,18 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- https://github.com/folke/which-key.nvim
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+
 	-- Colorschemes
 	-- https://github.com/folke/tokyonight.nvim
 	use({ "folke/tokyonight.nvim" })
