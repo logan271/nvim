@@ -71,6 +71,27 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim" }
   -- https://github.com/goolord/alpha-nvim
   use { "goolord/alpha-nvim" }
+  -- https://github.com/folke/todo-comments.nvim
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+  -- https://github.com/phaazon/hop.nvim
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
 
   -- Colorschemes
   -- https://github.com/folke/tokyonight.nvim
@@ -79,6 +100,8 @@ return packer.startup(function(use)
   use { "lunarvim/darkplus.nvim" }
   -- https://github.com/sainnhe/sonokai
   use { "sainnhe/sonokai" }
+  -- https://github.com/tanvirtin/monokai.nvim
+  use { 'tanvirtin/monokai.nvim' }
 
   -- completion plugins
   -- https://github.com/hrsh7th/nvim-cmp

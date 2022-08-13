@@ -9,7 +9,6 @@ M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 M.setup = function()
   local signs = {
-
     { name = "DiagnosticSignError", text = "" },
     { name = "DiagnosticSignWarn", text = "" },
     { name = "DiagnosticSignHint", text = "" },
@@ -75,7 +74,7 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   -- lspsaga
-  keymap(bufnr, "n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+  keymap(bufnr, "n", "<C-space>", "<cmd>Lspsaga hover_doc<CR>", opts)
   keymap(bufnr, "n", "<leader>hf", "<Cmd>Lspsaga lsp_finder<CR>", opts)
   keymap(bufnr, "n", "<leader>hh", "<cmd>Lspsaga preview_definition<CR>", opts)
   keymap(bufnr, "n", "<leader>hs", "<Cmd>Lspsaga signature_help<CR>", opts)
@@ -85,8 +84,6 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "<leader>hr", "<Cmd>Lspsaga rename<CR>", opts)
   -- keymap(bufnr, "n", "hl", "<Cmd><C-U>Lspsaga show_cursor_diagnostics<CR>", opts)
 end
-
-
 
 M.on_attach = function(client, bufnr)
   -- formatting, auto format on save
