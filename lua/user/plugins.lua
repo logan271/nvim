@@ -149,6 +149,13 @@ return packer.startup(function(use)
 	use({ "RRethy/vim-illuminate" })
 	-- https://github.com/glepnir/lspsaga.nvim
 	use({ "glepnir/lspsaga.nvim" }) -- LSP UIs
+	-- https://github.com/ray-x/lsp_signature.nvim
+	use({
+		"ray-x/lsp_signature.nvim",
+		config = function()
+			require("lsp_signature").setup({})
+		end,
+	})
 
 	-- Telescope
 	-- https://github.com/nvim-telescope/telescope.nvim
