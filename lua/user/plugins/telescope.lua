@@ -69,9 +69,9 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fF", ":Telescope oldfiles<CR>", opts)
 -- search
 -- Searches for the string under your cursor in your current working directory
-keymap("n", "<leader>sS", ":Telescope grep_string<CR>", opts)
+keymap("n", "<leader>ss", ":Telescope grep_string<CR>", opts)
 -- Search for a string in your current working directory and get results live as you type (respecting .gitignore)
-keymap("n", "<leader>ss", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>sS", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fc", ":Telescope command_history<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope registers<CR>", opts)

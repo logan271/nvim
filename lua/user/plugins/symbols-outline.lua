@@ -3,8 +3,11 @@ if not status_ok then
 	return
 end
 
+-- https://github.com/simrat39/symbols-outline.nvim
+
 symbolsOutline.setup({
-	auto_preview = false,
+  auto_preview = false,
+  auto_close = true,
 })
 
 local keymap = vim.keymap.set

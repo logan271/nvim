@@ -130,8 +130,10 @@ return packer.startup(function(use)
 	-- LSP
 	-- https://github.com/neovim/nvim-lspconfig
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
-	-- https://github.com/williamboman/nvim-lsp-installer
-	use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
+	-- https://github.com/williamboman/mason.nvim
+	use({ "williamboman/mason.nvim" })
+  -- https://github.com/williamboman/mason-lspconfig.nvim
+  use({ "williamboman/mason-lspconfig.nvim" })
 	-- https://github.com/jose-elias-alvarez/null-ls.nvim
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	-- https://github.com/RRethy/vim-illuminate

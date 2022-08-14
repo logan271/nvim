@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+-- https://github.com/lukas-reineke/indent-blankline.nvim
+
 indent_blankline.setup {
   char = "▏",
   show_trailing_blankline_indent = false,

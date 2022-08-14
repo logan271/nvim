@@ -12,7 +12,7 @@ keymap("", ";", "<Nop>", opts)
 vim.g.mapleader = ";"
 
 -- Press jk to escape from insert mode to normal_mode
-keymap("i", "jk", "<ESC><right>", opts)
+keymap("i", "jk", "<ESC>", opts)
 
 -- Modes
 --   normal_mode = "n",
@@ -40,7 +40,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts) -- shirt + h
 keymap("n", "<leader>bd", "<cmd>Bdelete!<CR>", opts)
 
 -- Clear highlights
-keymap("n", "<leader>H", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<Space>h", "<cmd>nohlsearch<CR>", opts)
 
 -- quit vim
 keymap("n", "<S-q>", "<cmd>quit!<CR>", opts)
