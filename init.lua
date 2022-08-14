@@ -1,6 +1,7 @@
 require("user.options")
 require("user.keymaps")
 require("user.plugins")
+require("user.lsp")
 require("user.plugins.init")
 require("user.autocommands")
 require("user.colorscheme")
