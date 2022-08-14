@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
 
--- Fixes Autocomment
+-- Display comment stick to next line
 -- vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 -- 	callback = function()
 -- 		vim.cmd("set formatoptions-=cro")
@@ -53,3 +53,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 	end,
 })
 
+-- turn off tmux status bar if we inside nvim
+vim.cmd([[
+  autocmd VimEnter,VimLeave * silent !tmux set status
+]])
