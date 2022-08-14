@@ -2,6 +2,14 @@ local status_ok, comment = pcall(require, "Comment")
 if not status_ok then
 	return
 end
+local status_ok, ft = pcall(require, "Comment.ft")
+if not status_ok then
+	return
+end
+
+-- by default json files does't not allow comment
+-- https://github.com/numToStr/Comment.nvim#ft-lua
+ft.json = {'//%s', '/*%s*/'}
 
 -- https://github.com/numToStr/Comment.nvim
 comment.setup({
