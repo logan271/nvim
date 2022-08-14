@@ -10,6 +10,8 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+-- https://github.com/kyazdani42/nvim-tree.lua
+
 nvim_tree.setup({
 	update_focused_file = {
 		enable = true,
@@ -17,39 +19,39 @@ nvim_tree.setup({
 	},
 	actions = {
 		change_dir = {
-			enable = false,
+			enable = true,
 			global = false,
 			restrict_above_cwd = true,
 		},
 	},
-	-- renderer = {
-	-- 	root_folder_modifier = ":t",
-	-- 	icons = {
-	-- 		glyphs = {
-	-- 			default = "",
-	-- 			symlink = "",
-	-- 			folder = {
-	-- 				arrow_open = "",
-	-- 				arrow_closed = "",
-	-- 				default = "",
-	-- 				open = "",
-	-- 				empty = "",
-	-- 				empty_open = "",
-	-- 				symlink = "",
-	-- 				symlink_open = "",
-	-- 			},
-	-- 			git = {
-	-- 				unstaged = "",
-	-- 				staged = "S",
-	-- 				unmerged = "",
-	-- 				renamed = "➜",
-	-- 				untracked = "U",
-	-- 				deleted = "",
-	-- 				ignored = "◌",
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
+	renderer = {
+		root_folder_modifier = ":t",
+		icons = {
+			glyphs = {
+				-- default = "",
+				-- symlink = "",
+				-- folder = {
+				-- 	arrow_open = "",
+				-- 	arrow_closed = "",
+				-- 	default = "",
+				-- 	open = "",
+				-- 	empty = "",
+				-- 	empty_open = "",
+				-- 	symlink = "",
+				-- 	symlink_open = "",
+				-- },
+				git = {
+					unstaged = "",
+					-- staged = "S",
+					-- unmerged = "",
+					-- renamed = "➜",
+					-- untracked = "U",
+					-- deleted = "",
+					-- ignored = "◌",
+				},
+			},
+		},
+	},
 	diagnostics = {
 		enable = true,
 		show_on_dirs = true,
