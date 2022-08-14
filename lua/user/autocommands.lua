@@ -54,6 +54,6 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 })
 
 -- turn off tmux status bar if we inside nvim
-vim.cmd([[
-  autocmd VimEnter,VimLeave * silent !tmux set status
-]])
+-- vim.cmd([[
+--   autocmd VimEnter,VimLeave * silent !tmux set status
+-- ]])

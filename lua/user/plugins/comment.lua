@@ -2,6 +2,7 @@ local status_ok, comment = pcall(require, "Comment")
 if not status_ok then
 	return
 end
+
 local status_ok, ft = pcall(require, "Comment.ft")
 if not status_ok then
 	return
@@ -28,3 +29,10 @@ comment.setup({
 	---@type string|fun():string
 	ignore = nil,
 })
+
+-- Comment
+local keymap = vim.keymap.set
+local opts = { silent = true, noremap = true }
+keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+

@@ -145,7 +145,7 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lua" })
 	-- https://github.com/kylechui/nvim-surround
 	use({ "kylechui/nvim-surround" })
-  -- https://github.com/danymat/neogen
+	-- https://github.com/danymat/neogen
 	use({
 		"danymat/neogen",
 		config = function()
@@ -162,7 +162,6 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 	-- https://github.com/folke/trouble.nvim
 	use({ "folke/trouble.nvim" })
-
 	-- LSP
 	-- https://github.com/neovim/nvim-lspconfig
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP

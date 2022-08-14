@@ -1,9 +1,9 @@
-local M = {}
-
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
 	return
 end
+
+local M = {}
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -63,8 +63,19 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+	keymap(bufnr, "n", "gr", "<Cmd>Lspsaga lsp_finder<CR>", opts)
+	keymap(bufnr, "n", "gR", "<Cmd>Lspsaga rename<CR>", opts)
+	keymap(bufnr, "n", "ga", "<Cmd>Lspsaga code_action<CR>", opts)
+
+	-- lspsaga
+	keymap(bufnr, "n", "<C-space>", "<cmd>Lspsaga hover_doc<CR>", opts)
+	-- keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	-- keymap(bufnr, "n", "<leader>gr", "<Cmd>Lspsaga lsp_finder<CR>", opts)
+	-- keymap(bufnr, "n", "<leader>gp", "<cmd>Lspsaga preview_definition<CR>", opts)
+	-- keymap(bufnr, "n", "<leader>hs", "<Cmd>Lspsaga signature_help<CR>", opts)
+	-- keymap(bufnr, "n", "<leader>ha", "<Cmd>Lspsaga code_action<CR>", opts)
+	keymap(bufnr, "n", "<leader>he", "<Cmd><Lspsaga show_line_diagnostics<CR>", opts)
 	keymap(bufnr, "n", "<leader>=", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 	keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
@@ -75,15 +86,6 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 	keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-	-- lspsaga
-	keymap(bufnr, "n", "<C-space>", "<cmd>Lspsaga hover_doc<CR>", opts)
-	keymap(bufnr, "n", "<leader>hf", "<Cmd>Lspsaga lsp_finder<CR>", opts)
-	keymap(bufnr, "n", "<leader>hh", "<cmd>Lspsaga preview_definition<CR>", opts)
-	keymap(bufnr, "n", "<leader>hs", "<Cmd>Lspsaga signature_help<CR>", opts)
-	keymap(bufnr, "n", "<leader>ha", "<Cmd>Lspsaga action.code_action<CR>", opts)
-	keymap(bufnr, "v", "<leader>ha", "<Cmd><C-U>Lspsaga range_code_action<CR>", opts)
-	keymap(bufnr, "n", "<leader>he", "<Cmd><Lspsaga show_line_diagnostics<CR>", opts)
-	keymap(bufnr, "n", "<leader>hr", "<Cmd>Lspsaga rename<CR>", opts)
 	-- keymap(bufnr, "n", "hl", "<Cmd><C-U>Lspsaga show_cursor_diagnostics<CR>", opts)
 end
 
