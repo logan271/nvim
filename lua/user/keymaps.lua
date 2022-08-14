@@ -1,7 +1,7 @@
 -- Shorten function name
 local keymap = vim.keymap.set
 -- Silent keymap option
-local opts = { silent = true }
+local opts = { silent = true, noremap = true }
 
 --Remap space as leader key
 -- keymap("", "<Space>", "<Nop>", opts)
@@ -40,7 +40,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts) -- shirt + h
 keymap("n", "<leader>bd", "<cmd>Bdelete!<CR>", opts)
 
 -- Clear highlights
--- keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<leader>H", "<cmd>nohlsearch<CR>", opts)
 
 -- quit vim
 keymap("n", "<S-q>", "<cmd>quit!<CR>", opts)
@@ -58,34 +58,3 @@ keymap("v", ">", ">gv", opts)
 keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Plugins --
-
--- DAP
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
-keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
-keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
-keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
-
--- Hop
-keymap("n", "<leader>jw", ":HopWord<cr>", opts)
-keymap("n", "<leader>jc", ":HopChar1<cr>", opts)
-keymap("n", "<leader>jl", ":HopLine<cr>", opts)
-
--- trouble
-keymap("n", "<leader>xx", ":TroubleToggle<cr>", opts)
-keymap("n", "<leader>xw", ":TroubleToggle workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>xd", ":TroubleToggle document_diagnostics<cr>", opts)
-keymap("n", "<leader>xq", ":TroubleToggle quickfix<cr>", opts)
-keymap("n", "<leader>xl", ":TroubleToggle loclist<cr>", opts)
-keymap("n", "gR", ":TroubleToggle lsp_references<cr>", opts)
-
--- Symboloutline
-keymap("n", "gs", ":SymbolsOutline<cr>", opts)
-
--- neogen
-keymap("n", "g/", ":Neogen<CR>", opts)

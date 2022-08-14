@@ -84,22 +84,11 @@ return packer.startup(function(use)
 		end,
 	})
 	-- https://github.com/simrat39/symbols-outline.nvim
-	use({
-		"simrat39/symbols-outline.nvim",
-		config = function()
-			require("symbols-outline").setup({
-				auto_preview = false,
-			})
-		end,
-	})
+	use({ "simrat39/symbols-outline.nvim" })
 	-- https://github.com/phaazon/hop.nvim
 	use({
 		"phaazon/hop.nvim",
 		branch = "v2", -- optional but strongly recommended
-		config = function()
-			-- you can configure Hop the way you like here; see :h hop-config
-			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-		end,
 	})
 
 	-- https://github.com/folke/which-key.nvim
@@ -148,9 +137,6 @@ return packer.startup(function(use)
 	-- https://github.com/danymat/neogen
 	use({
 		"danymat/neogen",
-		config = function()
-			require("neogen").setup({})
-		end,
 		requires = "nvim-treesitter/nvim-treesitter",
 		-- Uncomment next line if you want to follow only stable versions
 		-- tag = "*"
