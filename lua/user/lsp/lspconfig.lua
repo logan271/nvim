@@ -3,44 +3,25 @@ if not lspconfig_status_ok then
 	return
 end
 
-local on_attach = function(client, bufnr)
-	-- auto format on save
-	if client.server_capabilities.documentFormattingProvider then
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = vim.api.nvim_create_augroup("Format", { clear = true }),
-			buffer = bufnr,
-			-- callback = function() vim.lsp.buf.formatting_seq_sync() end
-			callback = function()
-				vim.lsp.buf.formatting_seq_sync()
-			end,
-		})
-	end
-
-	-- FIXME: client.resolved_capabilities.document_formatting is deprecated but some plugins/lsp still use it
-	-- FIXME: use client.server_capabilities.documentFormattingProvider instead
-	-- use null-ls for formatting
-	client.server_capabilities.documentFormattingProvider = false
-	client.resolved_capabilities.document_formatting = false
-
-	-- if client.name == "sumneko_lua" then
-	-- 	client.server_capabilities.documentFormattingProvider = false
-	-- 	client.resolved_capabilities.document_formatting = false
-	-- end
-	--
-	-- if client.name == "tsserver" then
-	-- 	client.server_capabilities.documentFormattingProvider = false
-	-- 	client.resolved_capabilities.document_formatting = false
-	-- end
-
-	-- setup lsp keymaps
-	require("user.lsp.lsp-keymaps")(bufnr)
-
+local function lsp_highlight_document(client)
+	-- Set autocommands conditional on server_capabilities
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
 		return
 	end
-
 	illuminate.on_attach(client)
+end
+
+local on_attach = function(client, bufnr)
+	-- nvim >= 0.8
+	-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
+	-- Avoiding LSP formatting conflicts
+	client.server_capabilities.documentFormattingProvider = false
+	-- nvim < 0.8
+	-- client.resolved_capabilities.document_formatting = false
+
+	require("user.lsp.lsp-keymaps")(bufnr)
+	lsp_highlight_document(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -55,8 +36,8 @@ local servers = {
 	"rust_analyzer",
 	"emmet_ls",
 	"html",
-  "taplo",
-  "volar",
+	"taplo",
+	"volar",
 }
 
 for _, server in pairs(servers) do

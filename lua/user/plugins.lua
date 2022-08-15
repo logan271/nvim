@@ -83,6 +83,13 @@ return packer.startup(function(use)
 		"phaazon/hop.nvim",
 		branch = "v2", -- optional but strongly recommended
 	})
+	-- https://github.com/danymat/neogen
+	use({
+		"danymat/neogen",
+		requires = "nvim-treesitter/nvim-treesitter",
+		-- Uncomment next line if you want to follow only stable versions
+		-- tag = "*"
+	})
 
 	-- https://github.com/folke/which-key.nvim
 	use({ "folke/which-key.nvim" })
@@ -111,15 +118,10 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	-- https://github.com/hrsh7th/cmp-nvim-lua
 	use({ "hrsh7th/cmp-nvim-lua" })
+
 	-- https://github.com/kylechui/nvim-surround
 	use({ "kylechui/nvim-surround" })
-	-- https://github.com/danymat/neogen
-	use({
-		"danymat/neogen",
-		requires = "nvim-treesitter/nvim-treesitter",
-		-- Uncomment next line if you want to follow only stable versions
-		-- tag = "*"
-	})
+
 	-- snippets
 	-- https://github.com/L3MON4D3/LuaSnip
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
